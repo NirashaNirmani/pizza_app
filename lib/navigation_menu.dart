@@ -14,7 +14,7 @@ class NavigationMenu extends StatelessWidget {
         bottomNavigationBar: Obx(() => NavigationBar(
                 height: 80,
                 elevation: 0,
-                backgroundColor: Color.fromARGB(244, 0, 13, 84),
+                backgroundColor: Color.fromARGB(244, 7, 10, 31),
                 indicatorColor: Colors.white.withOpacity(0),
                 selectedIndex: controller.selectedIndex.value,
                 onDestinationSelected: (index) =>
@@ -22,17 +22,17 @@ class NavigationMenu extends StatelessWidget {
                 destinations: const [
                   NavigationDestination(
                     icon: Icon(Iconsax.home, color: Colors.white),
-                    label: "Home",
+                    label: " ",
                   ),
                   NavigationDestination(
-                      icon: Icon(Iconsax.shop, color: Colors.white),
-                      label: "Shop"),
+                      icon: Icon(Iconsax.shopping_cart, color: Colors.white),
+                      label: " "),
                   NavigationDestination(
-                      icon: Icon(Iconsax.heart, color: Colors.white),
-                      label: "Wishlist"),
+                      icon: Icon(Iconsax.document, color: Colors.white),
+                      label: " "),
                   NavigationDestination(
                       icon: Icon(Iconsax.user, color: Colors.white),
-                      label: "Profile"),
+                      label: " "),
                 ])),
         body: Obx(
           () => controller.screens[controller.selectedIndex.value],
@@ -44,7 +44,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    HomePage(),
+    const HomePageScreen(),
     Container(
       color: Colors.blue,
     ),

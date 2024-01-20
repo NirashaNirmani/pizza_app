@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePageScreen extends StatelessWidget {
+  const HomePageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(244, 0, 13, 84),
+      backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       appBar: AppBar(
-        toolbarHeight: 100,
-        backgroundColor: Colors.blueAccent,
+        // toolbarHeight: 100,
+        backgroundColor: const Color.fromARGB(244, 7, 10, 31),
         leading: Container(
-          height: 10,
+          // height: 10,
           width: 10,
           padding: const EdgeInsets.all(5),
           color: const Color.fromARGB(255, 206, 195, 192).withOpacity(0.5),
@@ -75,23 +75,23 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Meal Category",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 30),
                   ),
-                  Text(
-                    "View All",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  ),
+                  TextButton(
+                      child: const Text("View All",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15)),
+                      onPressed: () {}),
                 ],
               ),
               const SizedBox(
