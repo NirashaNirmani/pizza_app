@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:pizza_app/cart/cart.dart';
+import 'package:pizza_app/screens/cart/cart.dart';
 import 'package:pizza_app/screens/home/home.dart';
 
 class NavigationMenu extends StatelessWidget {

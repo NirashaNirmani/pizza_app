@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({Key? key});
@@ -6,13 +7,43 @@ class HomePageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        // toolbarHeight: 100,
+        backgroundColor: const Color.fromARGB(244, 7, 10, 31),
+        leading: Container(
+          // height: 10,
+          width: 10,
+          padding: const EdgeInsets.all(5),
+          color: const Color.fromARGB(255, 206, 195, 192).withOpacity(0.5),
+          child: IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              // Implement search functionality
+            },
+          ),
+        ),
+        actions: [
+          const Text(
+            "Hello User !  ",
+            style: TextStyle(
+                fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+          ),
+          IconButton(
+            icon: const CircleAvatar(
+              radius: 25,
+              backgroundImage: AssetImage('assets/image1.png'),
+            ),
+            onPressed: () {},
+          ),
+        ],
+      ),
       backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-            top: 100,
-            left: 40,
-            right: 40,
+            top: 40,
+            left: 30,
+            right: 30,
           ),
           child: Column(
             children: [
@@ -121,60 +152,29 @@ class HomePageScreen extends StatelessWidget {
                       onPressed: () {}),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      // Add your button click logic here
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      primary:
-                          Color.fromARGB(255, 218, 28, 28).withOpacity(0.8),
-                      onPrimary: Colors.white,
-                    ),
-                    child: const Text(
-                      'Breakfast',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Add your button click logic here
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      primary: Colors.white38.withOpacity(0.2),
-                      onPrimary: Colors.white,
-                    ),
-                    child: const Text(
-                      'Lunch',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Add your button click logic here
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      primary: Colors.white38.withOpacity(0.2),
-                      onPrimary: Colors.white,
-                    ),
-                    child: const Text(
-                      'Dinner',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: 50, // Adjust the height as needed
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(12),
+                  itemBuilder: (context, value) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        elevatedButton(1, "Breakfast", ()),
+                        elevatedButton(2, "Lunch", ()),
+                        elevatedButton(3, "Dinner", ()),
+                        elevatedButton(4, "Short Eats", ()),
+                        elevatedButton(4, "Pizza Special", ()),
+                      ],
+                    );
+                  },
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(
+                height: 20,
+              ),
+              const SizedBox(height: 10),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -185,6 +185,9 @@ class HomePageScreen extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Column(
                 children: [
@@ -221,6 +224,23 @@ class HomePageScreen extends StatelessWidget {
     );
   }
 
+  Widget elevatedButton(int value, String text, onPressed) => Row(
+        children: [
+          ElevatedButton(
+              onPressed: () => Get.to(onPressed),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black.withOpacity(0.5),
+                  foregroundColor: Colors.white),
+              child: Text(
+                text,
+                style: const TextStyle(color: Colors.white),
+              )),
+          const SizedBox(
+            width: 10,
+          ),
+        ],
+      );
+
   Widget populerDestination(String img, String city, String country) {
     return Container(
       padding: const EdgeInsets.all(8),
@@ -228,7 +248,7 @@ class HomePageScreen extends StatelessWidget {
           color: Colors.white.withOpacity(0.3),
           borderRadius: BorderRadius.circular(6)),
       height: 260,
-      width: 150,
+      width: 165,
       child: Column(
         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
