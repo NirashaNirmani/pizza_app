@@ -8,10 +8,12 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(214, 0, 0, 0),
         actions: [
           Container(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: const Color.fromARGB(31, 255, 255, 255),
               borderRadius: BorderRadius.circular(40),
@@ -21,7 +23,7 @@ class CartPage extends StatelessWidget {
                       const Color.fromARGB(255, 229, 231, 231).withOpacity(0.5),
                   spreadRadius: 2,
                   blurRadius: 10,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),

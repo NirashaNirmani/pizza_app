@@ -101,7 +101,7 @@ class Details extends StatelessWidget {
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.yellow[700]),
-                            onPressed: () => Get.to(const WelcomeScreen()),
+                            onPressed: () => Get.offAll(const WelcomeScreen()),
                             child: const Text(
                               "Logout",
                               style: TextStyle(

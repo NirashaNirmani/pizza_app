@@ -1,8 +1,10 @@
 //import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 //import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:pizza_app/screens/shop/shop_page.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
@@ -17,13 +19,16 @@ class HomePageScreen extends StatelessWidget {
         leading: SizedBox(
           width: 20,
           height: 20,
-          child: IconButton(
-            icon: const Icon(Icons.search),
-            color: Colors.amberAccent,
-            iconSize: 30,
-            onPressed: () {
-              // Implement search functionality
-            },
+          child: Padding(
+            padding: const EdgeInsets.only(left: 25),
+            child: IconButton(
+              icon: const Icon(Icons.search),
+              color: Colors.amberAccent,
+              iconSize: 30,
+              onPressed: () {
+                // Implement search functionality
+              },
+            ),
           ),
         ),
         actions: [
@@ -32,12 +37,15 @@ class HomePageScreen extends StatelessWidget {
             style: TextStyle(
                 fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
           ),
-          IconButton(
-            icon: const CircleAvatar(
-              radius: 35,
-              backgroundImage: AssetImage('assets/image1.png'),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 25),
+            child: IconButton(
+              icon: const CircleAvatar(
+                radius: 35,
+                backgroundImage: AssetImage('assets/image1.png'),
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {},
           ),
         ],
       ),
@@ -330,9 +338,7 @@ class HomePageScreen extends StatelessWidget {
               Row(
                 children: [
                   ElevatedButton(
-                    onPressed: () {
-                      // Add your onPressed logic here
-                    },
+                    onPressed: () => Get.to(const ShopDetails()),
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
