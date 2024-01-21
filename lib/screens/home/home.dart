@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -8,13 +9,21 @@ class HomePageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // toolbarHeight: 100,
+        //toolbarHeight: 100,
         backgroundColor: const Color.fromARGB(244, 7, 10, 31),
         leading: Container(
-          // height: 10,
-          width: 10,
-          padding: const EdgeInsets.all(5),
-          color: const Color.fromARGB(255, 206, 195, 192).withOpacity(0.5),
+          padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.circular(40),
+              boxShadow: [
+                BoxShadow(
+                    color: const Color.fromARGB(255, 229, 231, 231)
+                        .withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 3))
+              ]),
           child: IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
@@ -28,12 +37,24 @@ class HomePageScreen extends StatelessWidget {
             style: TextStyle(
                 fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
           ),
-          IconButton(
-            icon: const CircleAvatar(
-              radius: 25,
+          Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                color: Colors.black12,
+                borderRadius: BorderRadius.circular(30),
+                boxShadow: [
+                  BoxShadow(
+                      color: const Color.fromARGB(255, 229, 231, 231)
+                          .withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      offset: Offset(0, 3))
+                ]),
+            child: CircleAvatar(
+              radius:
+                  40, // Adjust the radius to set the size of the CircleAvatar
               backgroundImage: AssetImage('assets/image1.png'),
             ),
-            onPressed: () {},
           ),
         ],
       ),
@@ -186,36 +207,66 @@ class HomePageScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (int i = 0; i < 10; i++)
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: Container(
+                          width: 160,
+                          height: 225,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 253, 253, 253),
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.cyan.withOpacity(0.5),
+                                spreadRadius: 3,
+                                blurRadius: 3,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  child: Image.asset('assets/pizza2.jpg'),
+                                  height: 130,
+                                  width: 130,
+                                ),
+                                Text(
+                                  "Hot Pizza",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  "Ligurian pizza",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
               const SizedBox(
                 height: 10,
-              ),
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      populerDestination(
-                          'assets/pizza2.jpg', 'Lorem ipsum', 'Lorem Ipsum '),
-                      populerDestination(
-                          'assets/pizza2.jpg', 'Lorem Ipsum ', 'Lorem ipsum'),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      populerDestination(
-                          'assets/pizza2.jpg', 'Lorem ipsum', 'Lorem Ipsum '),
-                      populerDestination(
-                          'assets/pizza2.jpg', 'Lorem Ipsum ', 'Lorem ipsum'),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
               )
             ],
           ),

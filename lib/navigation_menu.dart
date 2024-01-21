@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:pizza_app/screens/cart/cart.dart';
 import 'package:pizza_app/screens/home/home.dart';
+import 'package:pizza_app/screens/shop/shop_page.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -47,13 +48,11 @@ class NavigationController extends GetxController {
   final screens = [
     const HomePageScreen(),
     const CartPage(),
-
-    Container(
-      color: const Color.fromARGB(255, 48, 46, 38),
-    ),
     Container(
       color: Colors.pink,
     ),
+
+    const Details(),
     // const StoreScreen(),
     // const Favouritescreen(),
     // const SettingsScreen(),

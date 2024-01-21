@@ -7,11 +7,38 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(214, 0, 0, 0),
+        actions: [
+          Container(
+            padding: EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(31, 255, 255, 255),
+              borderRadius: BorderRadius.circular(40),
+              boxShadow: [
+                BoxShadow(
+                  color:
+                      const Color.fromARGB(255, 229, 231, 231).withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 10,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: IconButton(
+              icon: const Icon(Icons.star),
+              onPressed: () {
+                // Implement search functionality
+              },
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 0, bottom: 20),
           child: Container(
-            height: 900,
+            height: 750,
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
