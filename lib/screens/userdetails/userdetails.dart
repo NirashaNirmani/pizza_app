@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 //import 'package:iconsax/iconsax.dart';
 import 'package:pizza_app/navigation_menu.dart';
 import 'package:pizza_app/screens/authentication/signup.dart';
+import 'package:pizza_app/screens/welcomescreen/welcomescreen.dart';
 
 class Details extends StatelessWidget {
   const Details({super.key});
@@ -91,16 +92,24 @@ class Details extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 40),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.yellow[700]),
-                          onPressed: () => Get.to(const NavigationMenu()),
-                          child: const Text("Logout")),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(9.0),
+                      child: SizedBox(
+                        width: 350,
+                        height: 50,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.yellow[700]),
+                            onPressed: () => Get.to(const WelcomeScreen()),
+                            child: const Text(
+                              "Logout",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.black),
+                            )),
+                      ),
                     ),
                   ),
                   const SizedBox(

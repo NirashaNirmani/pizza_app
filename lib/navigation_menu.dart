@@ -15,7 +15,7 @@ class NavigationMenu extends StatelessWidget {
     //final darkMode = EHelperFunctions.isDarkMode(context);
     return Scaffold(
         bottomNavigationBar: Obx(() => NavigationBar(
-                height: 80,
+                height: 60,
                 elevation: 0,
                 backgroundColor: Color.fromARGB(244, 7, 10, 31),
                 indicatorColor: Colors.white.withOpacity(0),

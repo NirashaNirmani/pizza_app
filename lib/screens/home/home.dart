@@ -1,31 +1,26 @@
+//import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:get/get.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+//import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class HomePageScreen extends StatelessWidget {
-  const HomePageScreen({Key? key});
-
+  const HomePageScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       appBar: AppBar(
-        //toolbarHeight: 100,
+        leadingWidth: 10,
+        toolbarHeight: 80,
         backgroundColor: const Color.fromARGB(244, 7, 10, 31),
-        leading: Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-              color: Colors.black12,
-              borderRadius: BorderRadius.circular(40),
-              boxShadow: [
-                BoxShadow(
-                    color: const Color.fromARGB(255, 229, 231, 231)
-                        .withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: const Offset(0, 3))
-              ]),
+        leading: SizedBox(
+          width: 20,
+          height: 20,
           child: IconButton(
             icon: const Icon(Icons.search),
+            color: Colors.amberAccent,
+            iconSize: 30,
             onPressed: () {
               // Implement search functionality
             },
@@ -35,36 +30,24 @@ class HomePageScreen extends StatelessWidget {
           const Text(
             "Hello User !  ",
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
+                fontSize: 20, fontWeight: FontWeight.w600, color: Colors.white),
           ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: Colors.black12,
-                borderRadius: BorderRadius.circular(30),
-                boxShadow: [
-                  BoxShadow(
-                      color: const Color.fromARGB(255, 229, 231, 231)
-                          .withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 10,
-                      offset: const Offset(0, 3))
-                ]),
-            child: const CircleAvatar(
-              radius:
-                  40, // Adjust the radius to set the size of the CircleAvatar
+          IconButton(
+            icon: const CircleAvatar(
+              radius: 35,
               backgroundImage: AssetImage('assets/image1.png'),
             ),
+            onPressed: () {},
           ),
         ],
       ),
-      backgroundColor: const Color.fromARGB(244, 7, 10, 31),
+      //backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
             top: 60,
-            left: 30,
-            right: 30,
+            left: 20,
+            right: 20,
           ),
           child: Column(
             children: [
@@ -150,42 +133,43 @@ class HomePageScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      'Material Category',
-                      style: TextStyle(
+                  const Text(
+                    "Meal Category",
+                    style: TextStyle(
                         color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w800,
-                      ),
-                    ),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30),
                   ),
-                  TextButton(
-                      child: const Text("View All",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15)),
-                      onPressed: () {}),
+                  // TextButton(
+                  //     child: const Text("View All",
+                  //         style: TextStyle(
+                  //             color: Colors.white,
+                  //             fontWeight: FontWeight.bold,
+                  //             fontSize: 15)),
+                  //     onPressed: () {}),
                 ],
               ),
+              const SizedBox(
+                height: 20,
+              ),
+
               SizedBox(
                 height: 50, // Adjust the height as needed
                 child: ListView.builder(
                   padding: const EdgeInsets.all(12),
+                  // itemCount: 5,
                   itemBuilder: (context, value) {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        elevatedButton(1, "Breakfast", ()),
-                        elevatedButton(2, "Lunch", ()),
-                        elevatedButton(3, "Dinner", ()),
-                        elevatedButton(4, "Short Eats", ()),
-                        elevatedButton(4, "Pizza Special", ()),
+                        elevatedButton(1, "Breakfast"),
+                        elevatedButton(2, "Lunch"),
+                        elevatedButton(3, "Dinner"),
+                        elevatedButton(4, "Short Eats"),
+                        elevatedButton(4, "Pizza Special"),
                       ],
                     );
                   },
@@ -195,80 +179,72 @@ class HomePageScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const SizedBox(height: 10),
-              const Align(
+              Container(
                 alignment: Alignment.centerLeft,
-                child: Text(
-                  'Popular Now',
+                child: const Text(
+                  "Popular",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    for (int i = 0; i < 10; i++)
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: Container(
-                          width: 160,
-                          height: 225,
-                          decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 253, 253, 253),
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.cyan.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 3,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // ignore: sized_box_for_whitespace
-                                Container(
-                                  child: Image.asset('assets/pizza2.jpg'),
-                                  height: 130,
-                                  width: 130,
-                                ),
-                                const Text(
-                                  "Hot Pizza",
-                                  style: const TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                const Text(
-                                  "Ligurian pizza",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                              ],
-                            ),
-                          ),
+
+              SizedBox(
+                height: 320, // Adjust the height as needed
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(12),
+                  itemBuilder: (context, value) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        populer('assets/1img.jpg', 'Lorem ipsum',
+                            'Lorem Ipsum dolor sal amet', 3.5),
+                        const SizedBox(
+                          width: 10,
                         ),
-                      ),
-                  ],
+                        populer('assets/2img.jpg', 'Lorem Ipsum dolor sal amet',
+                            'Lorem ipsum', 4.5),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        populer('assets/2img.jpg', 'Lorem Ipsum dolor sal amet',
+                            'Lorem ipsum', 4),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        populer('assets/2img.jpg', 'Lorem Ipsum dolor sal amet',
+                            'Lorem ipsum', 5),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        populer('assets/2img.jpg', 'Lorem Ipsum dolor sal amet',
+                            'Lorem ipsum', 1),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        populer('assets/2img.jpg', 'Lorem Ipsum dolor sal amet',
+                            'Lorem ipsum', 2.5),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                      ],
+                    );
+                  },
+                  scrollDirection: Axis.horizontal,
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              )
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     populerDestination('assets/1img.jpg', 'Lorem ipsum',
+              //         'Lorem Ipsum dolor sal amet', 3.5),
+              //     populerDestination('assets/2img.jpg',
+              //         'Lorem Ipsum dolor sal amet', 'Lorem ipsum', 4.5),
+              //   ],
+              // ),
             ],
           ),
         ),
@@ -276,11 +252,13 @@ class HomePageScreen extends StatelessWidget {
     );
   }
 
-  Widget elevatedButton(int value, String text, onPressed) => Row(
+  Widget elevatedButton(int value, String text) => Row(
         children: [
           ElevatedButton(
-              onPressed: () => Get.to(onPressed),
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
                   backgroundColor: Colors.black.withOpacity(0.5),
                   foregroundColor: Colors.white),
               child: Text(
@@ -288,72 +266,86 @@ class HomePageScreen extends StatelessWidget {
                 style: const TextStyle(color: Colors.white),
               )),
           const SizedBox(
-            width: 10,
+            width: 20,
           ),
         ],
       );
 
-  Widget populerDestination(String img, String city, String country) {
+  Widget populer(
+    String img,
+    String name,
+    String dep,
+    double rating,
+  ) {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.white.withOpacity(0.5),
           borderRadius: BorderRadius.circular(6)),
-      height: 260,
-      width: 165,
+      height: 280,
+      width: 170,
       child: Column(
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
           ClipRRect(
-              // borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-            img,
-            fit: BoxFit.cover,
-            height: 140,
-            width: 150,
-          )),
+                img,
+                fit: BoxFit.cover,
+                height: 140,
+                width: 160,
+              )),
           const SizedBox(height: 2),
           Text(
-            country,
+            dep,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
                 color: Color.fromARGB(255, 255, 255, 255)),
           ),
           Text(
-            city,
+            name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w300,
-                color: Color.fromARGB(255, 209, 203, 203)),
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Color.fromARGB(255, 26, 25, 25)),
           ),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Container(
-              height: 35,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromARGB(255, 209, 108, 14),
-                    Color.fromARGB(255, 230, 64, 13),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              RatingBarIndicator(
+                rating: rating,
+                itemSize: 15,
+                unratedColor: Colors.white,
+                itemBuilder: (_, __) => const Icon(
+                  Iconsax.star1,
+                  color: Colors.amber,
                 ),
               ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(0, 231, 12, 12),
-                  onPrimary: Colors.white, // Text color
-                ),
-                child: const Text('Order'),
+              Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      // Add your onPressed logic here
+                    },
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      backgroundColor: Colors.black.withOpacity(0.5),
+                      foregroundColor: Colors.white,
+                    ),
+                    child: const Text('Buy'),
+                  ),
+                ],
               ),
-            ),
+            ],
           ),
         ],
       ),

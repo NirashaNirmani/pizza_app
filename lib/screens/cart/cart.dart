@@ -28,7 +28,7 @@ class CartPage extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.star),
               onPressed: () {
-                // Implement search functionality
+                // Implement star icon functionality
               },
             ),
           ),

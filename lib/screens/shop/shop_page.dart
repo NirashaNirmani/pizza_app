@@ -97,17 +97,25 @@ class ShopDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 1),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(9.0),
                   child: SizedBox(
-                    width: double.infinity,
+                    width: 120,
                     height: 50,
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)),
                             backgroundColor: Colors.yellow[700]),
                         onPressed: () => Get.to(const NavigationMenu()),
-                        child: const Text("Logout")),
+                        child: const Text(
+                          "Order Now",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w700),
+                        )),
                   ),
                 ),
                 const SizedBox(

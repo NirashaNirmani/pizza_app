@@ -8,16 +8,16 @@ class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _BookFlightPageState();
+  State<SignInScreen> createState() => _SigninState();
 }
 
-class _BookFlightPageState extends State<SignInScreen> {
+class _SigninState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.only(top: 50, right: 20, left: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [

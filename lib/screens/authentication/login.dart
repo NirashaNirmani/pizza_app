@@ -12,12 +12,12 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.only(top: 50, right: 20, left: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               Text(
                 'Login',
@@ -98,7 +98,11 @@ class LoginScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.yellow[700]),
                         onPressed: () => Get.to(const NavigationMenu()),
-                        child: const Text("Login")),
+                        child: const Text("Login",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.black))),
                   ),
                   const SizedBox(
                     height: 10,
