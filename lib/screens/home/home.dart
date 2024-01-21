@@ -12,7 +12,7 @@ class HomePageScreen extends StatelessWidget {
         //toolbarHeight: 100,
         backgroundColor: const Color.fromARGB(244, 7, 10, 31),
         leading: Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: Colors.black12,
               borderRadius: BorderRadius.circular(40),
@@ -22,7 +22,7 @@ class HomePageScreen extends StatelessWidget {
                         .withOpacity(0.5),
                     spreadRadius: 2,
                     blurRadius: 10,
-                    offset: Offset(0, 3))
+                    offset: const Offset(0, 3))
               ]),
           child: IconButton(
             icon: const Icon(Icons.search),
@@ -38,7 +38,7 @@ class HomePageScreen extends StatelessWidget {
                 fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: Colors.black12,
                 borderRadius: BorderRadius.circular(30),
@@ -48,9 +48,9 @@ class HomePageScreen extends StatelessWidget {
                           .withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 10,
-                      offset: Offset(0, 3))
+                      offset: const Offset(0, 3))
                 ]),
-            child: CircleAvatar(
+            child: const CircleAvatar(
               radius:
                   40, // Adjust the radius to set the size of the CircleAvatar
               backgroundImage: AssetImage('assets/image1.png'),
@@ -62,7 +62,7 @@ class HomePageScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
-            top: 40,
+            top: 60,
             left: 30,
             right: 30,
           ),
@@ -148,7 +148,7 @@ class HomePageScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -193,7 +193,7 @@ class HomePageScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               const SizedBox(height: 10),
               const Align(
@@ -207,14 +207,14 @@ class HomePageScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 30),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                     for (int i = 0; i < 10; i++)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: Container(
                           width: 160,
                           height: 225,
@@ -226,37 +226,38 @@ class HomePageScreen extends StatelessWidget {
                                 color: Colors.cyan.withOpacity(0.5),
                                 spreadRadius: 3,
                                 blurRadius: 3,
-                                offset: Offset(0, 2),
+                                offset: const Offset(0, 2),
                               ),
                             ],
                           ),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                // ignore: sized_box_for_whitespace
                                 Container(
                                   child: Image.asset('assets/pizza2.jpg'),
                                   height: 130,
                                   width: 130,
                                 ),
-                                Text(
+                                const Text(
                                   "Hot Pizza",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                   ),
                                 ),
-                                SizedBox(height: 4),
-                                Text(
+                                const SizedBox(height: 4),
+                                const Text(
                                   "Ligurian pizza",
                                   style: TextStyle(
                                     fontSize: 15,
                                     color: Colors.black,
                                   ),
                                 ),
-                                SizedBox(height: 4),
+                                const SizedBox(height: 4),
                               ],
                             ),
                           ),

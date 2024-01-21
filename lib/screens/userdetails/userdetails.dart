@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:pizza_app/navigation_menu.dart';
 import 'package:pizza_app/screens/authentication/signup.dart';
 
-class ShopDetails extends StatelessWidget {
-  const ShopDetails({super.key});
+class Details extends StatelessWidget {
+  const Details({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,17 @@ class ShopDetails extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+              Text(
+                'User Details',
+                style: TextStyle(
+                    fontSize: 35,
+                    fontFamily: 'Times New Roman',
+                    fontWeight: FontWeight.w800,
+                    color: Colors.yellow[700]),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -26,36 +37,56 @@ class ShopDetails extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage("assets/image3.png"),
+                        image: AssetImage("assets/user.png"),
                         height: 200,
                         width: 200,
                       )
                     ],
                   ),
                   const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Lorem ipsum dolor',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                        ),
-                        TextButton(
-                            child: const Text("View All",
+                        // ignore: unnecessary_const
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'N.G Nirasha Nirmani',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15)),
-                            onPressed: () {}),
+                                    fontSize: 25, color: Colors.white),
+                              ),
+                              SizedBox(
+                                  height:
+                                      8), // Adding some space between the texts
+                              Text(
+                                'nishinirmani@gmail.com',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                              SizedBox(
+                                  height:
+                                      8), // Adding some space between the texts
+                              Text(
+                                '0767171100',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                              SizedBox(
+                                  height:
+                                      8), // Adding some space between the texts
+                              Text(
+                                'Navinna Road, Hapugala, Galle',
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
