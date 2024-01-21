@@ -12,89 +12,110 @@ class ShopDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(244, 7, 10, 31),
       body: Padding(
-        padding: const EdgeInsets.only(top: 100),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+        padding: const EdgeInsets.only(top: 80, right: 30, left: 30),
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      image: AssetImage("assets/image3.png"),
+                      height: 200,
+                      width: 200,
+                    )
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image(
-                        image: AssetImage("assets/image3.png"),
-                        height: 200,
-                        width: 200,
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Lorem ipsum dolor',
-                            style: TextStyle(
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Lorem ipsum \ndolor',
+                          style: TextStyle(
                               color: Colors.white,
-                              fontSize: 25,
+                              fontSize: 30,
                               fontWeight: FontWeight.w800,
-                            ),
-                          ),
+                              fontFamily: "Serif"),
                         ),
-                        TextButton(
-                            child: const Text("View All",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15)),
-                            onPressed: () {}),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.yellow[700]),
-                          onPressed: () => Get.to(const NavigationMenu()),
-                          child: const Text("Logout")),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Do you want to edit profile?",
-                        style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       TextButton(
-                        onPressed: () => Get.to(const SignInScreen()),
-                        child: const Text(
-                          "Edit",
-                          style: TextStyle(color: Colors.blue, fontSize: 15),
-                        ),
-                      )
+                          child: const Text("\&12.59",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 25)),
+                          onPressed: () {}),
                     ],
-                  )
-                ],
-              ),
-            ],
-          ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12, left: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Lorem ipsum dolor",
+                        style: TextStyle(
+                            color: Colors.white.withOpacity(0.6), fontSize: 19),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 230,
+                        width: 330,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromARGB(244, 7, 10, 31)
+                                .withOpacity(0.3)),
+                        child: const Text(
+                          'Pizza (/ˈpiːtsə/ PEET-sə, Italian: [ˈpittsa]; Neapolitan: [ˈpittsə]) is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as anchovies, mushrooms, onions, olives, vegetables, meat, etc.)',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Serif',
+                            color: Color.fromARGB(255, 247, 244, 244),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 1),
+                Padding(
+                  padding: const EdgeInsets.all(9.0),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.yellow[700]),
+                        onPressed: () => Get.to(const NavigationMenu()),
+                        child: const Text("Logout")),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
