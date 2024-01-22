@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-//import 'package:iconsax/iconsax.dart';
+
 import 'package:pizza_app/navigation_menu.dart';
-import 'package:pizza_app/screens/authentication/signup.dart';
 
 class ShopDetails extends StatelessWidget {
   const ShopDetails({super.key});
@@ -11,12 +10,12 @@ class ShopDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0), // Set your preferred height
+        preferredSize: const Size.fromHeight(80.0), // Set your preferred height
         child: AppBar(
           backgroundColor: const Color.fromARGB(244, 7, 10, 31),
           actions: [
             Container(
-              padding: EdgeInsets.only(right: 30, top: 8),
+              padding: const EdgeInsets.only(right: 30, top: 8),
               child: Row(
                 children: [
                   Column(
@@ -24,7 +23,7 @@ class ShopDetails extends StatelessWidget {
                       IconButton(
                         iconSize: 28,
                         color: Colors.white.withOpacity(0.5),
-                        icon: Icon(Icons.share),
+                        icon: const Icon(Icons.share),
                         onPressed: () {},
                       ),
                     ],
@@ -34,7 +33,7 @@ class ShopDetails extends StatelessWidget {
                       IconButton(
                         iconSize: 28,
                         color: Colors.white.withOpacity(0.5),
-                        icon: Icon(Icons.star),
+                        icon: const Icon(Icons.star),
                         onPressed: () {},
                       ),
                     ],

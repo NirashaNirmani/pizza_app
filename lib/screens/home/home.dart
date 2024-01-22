@@ -144,7 +144,7 @@ class HomePageScreen extends StatelessWidget {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     "Meal Category",
                     style: TextStyle(
                         color: Colors.white,

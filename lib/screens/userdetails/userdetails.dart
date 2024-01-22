@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-//import 'package:iconsax/iconsax.dart';
-import 'package:pizza_app/navigation_menu.dart';
-import 'package:pizza_app/screens/authentication/signup.dart';
 import 'package:pizza_app/screens/welcomescreen/welcomescreen.dart';
 
 class Details extends StatelessWidget {

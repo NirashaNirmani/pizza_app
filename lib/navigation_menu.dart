@@ -17,7 +17,7 @@ class NavigationMenu extends StatelessWidget {
         bottomNavigationBar: Obx(() => NavigationBar(
                 height: 60,
                 elevation: 0,
-                backgroundColor: Color.fromARGB(244, 7, 10, 31),
+                backgroundColor: const Color.fromARGB(244, 7, 10, 31),
                 indicatorColor: Colors.white.withOpacity(0),
                 selectedIndex: controller.selectedIndex.value,
                 onDestinationSelected: (index) =>
@@ -51,8 +51,5 @@ class NavigationController extends GetxController {
     const CartPage(),
     const ShopDetails(),
     const Details(),
-    // const StoreScreen(),
-    // const Favouritescreen(),
-    // const SettingsScreen(),
   ];
 }
