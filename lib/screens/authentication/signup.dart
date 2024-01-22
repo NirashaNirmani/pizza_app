@@ -283,7 +283,11 @@ class SignUpScreen extends StatelessWidget {
                                       Get.to(const NavigationMenu());
                                     }
                                   },
-                                  child: const Text("Sign Up")),
+                                  child: const Text("Sign Up",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.black))),
                             ),
                             const SizedBox(
                               height: 10,
