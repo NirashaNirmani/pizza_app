@@ -59,7 +59,7 @@ class WelcomeScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignInScreen()));
+                              builder: (context) => const SignUpScreen()));
                     },
                     // defining the shape
                     shape: RoundedRectangleBorder(

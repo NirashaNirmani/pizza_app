@@ -123,7 +123,7 @@ class Details extends StatelessWidget {
                         style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       TextButton(
-                        onPressed: () => Get.to(const SignInScreen()),
+                        onPressed: () {},
                         child: const Text(
                           "Edit",
                           style: TextStyle(color: Colors.blue, fontSize: 15),
